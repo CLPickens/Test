@@ -1,0 +1,109 @@
+
+<!-- saved from url=(0054)http://informaton.org/webapp/examples/jquery_demo.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/jquery-1.3.2.min.js"</script>
+
+	<script src="js/jquery-3.0.0.js"></script>
+
+-->
+
+<script src="./jquerydemo_files/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="./jquerydemo_files/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="./jquerydemo_files/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="./jquerydemo_files/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="./jquerydemo_files/myapp.css">
+
+
+<script>
+
+function fadeFcn(){
+	var durationToFadeOut = 600;
+	$("p").fadeOut(durationToFadeOut)
+}
+
+function fadeFcn(divElement){
+	var durationToFadeOut = 600;
+	$(divElement).fadeOut(durationToFadeOut)
+}
+
+function toggleChildren(divElement){
+	$(divElement).children.toggle();
+}
+
+function fadeInFcn(){
+	$("p").fadeIn("slow")	
+}
+
+function fadeInFcn(divElement){
+	$(divElement).fadeIn("slow")	
+}
+
+
+function toggleFcn(){
+	$("p").fadeToggle();
+}
+
+function showOnMouseEnter(divElement,divClassname){
+    $(divElement).children("."+divClassname).fadeIn();
+}
+
+function hideOnMouseLeave(divElement,divClassname){
+	$(divElement).children("."+divClassname).fadeOut();
+}
+
+function showOnMouseOver(divElement,divClassname){
+    $(divElement).children("."+divClassname).fadeToggle('fast','linear');
+}
+
+function showCowboys(divElement){
+	$(divElement).html('<H1>Here there are!</H1>');
+}
+
+
+
+function hideCowboys(divElement){
+	$(divElement).html("<H1>Where have all the cowboys gone?</H1>");
+}
+
+</script>
+
+</head>
+	<body>
+
+		<h1>jQuery examples</h1>
+
+
+		<div class="roundborder" onmouseenter="showCowboys(this)" onmouseleave="hideCowboys(this)"><h1>Here there are!</h1></div>
+
+
+		<button type="button" class="btn btn-default" onclick="alert(&#39;!&#39;)">?</button>
+
+		<div class="roundborder" onmouseenter="showOnMouseEnter(this,&#39;showonmouseover&#39;)" onmouseleave="hideOnMouseLeave(this,&#39;showonmouseover&#39;)">
+		<p> Here's some text</p>
+		</div>
+
+
+
+		<div class="roundborder">
+			<p onmouseenter="fadeFcn(this)" onmouseleave="fadeFcn(this)" style="display: none;"> And yet another paragraph.</p>
+		</div>
+
+		<div>
+		<p>A spacer</p>
+		</div>
+
+		<div class="roundborder" onmouseenter="fadeFcn()">
+			<p> And here is another div with a short paragraph.</p>
+		</div>
+
+	
+
+</body></html>
